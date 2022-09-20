@@ -15,7 +15,7 @@ const Form = () => {
       setAlert('Todos los campos son requeridos');
       return;
     }
-
+    setAlert('');
     searchWeather(search);
   };
 

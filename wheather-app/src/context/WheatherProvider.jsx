@@ -10,6 +10,8 @@ const WheatherProvider = ({ children }) => {
   });
 
   const [result, setResult] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [noResult, setNoResult] = useState(false);
 
   const searchData = e => {
     setSearch({
@@ -19,6 +21,8 @@ const WheatherProvider = ({ children }) => {
   };
 
   const searchWeather = async searchData => {
+    setLoading(true);
+    setNoResult(false);
     try {
       const { city, country } = searchData;
       const apiID = import.meta.env.VITE_API_KEY;
@@ -29,13 +33,15 @@ const WheatherProvider = ({ children }) => {
       const { data: weather } = await axios(urlWheather);
       setResult(weather);
     } catch (error) {
-      console.log(error);
+      setNoResult(`No hay resultados para la busqueda`);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <WheatherContext.Provider
-      value={{ search, searchData, searchWeather, result }}
+      value={{ search, searchData, searchWeather, result, loading, noResult }}
     >
       {children}
     </WheatherContext.Provider>
