@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-import useWheather from '../hooks/useWheather';
+import useWeather from '../hooks/useWeather';
 
 const Form = () => {
-  const { search, searchData, searchWeather } = useWheather();
+  const { search, searchData, searchWeather } = useWeather();
 
   const { city, country } = search;
 

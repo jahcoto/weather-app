@@ -1,7 +1,7 @@
-import useWheather from '../hooks/useWheather';
+import useWeather from '../hooks/useWeather';
 
 const Result = () => {
-  const { result } = useWheather();
+  const { result } = useWeather();
   const { name, main } = result;
   //Grados Kelvin
   const kelvin = 273.15;

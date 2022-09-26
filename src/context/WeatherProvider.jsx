@@ -1,9 +1,9 @@
 import { useState, createContext } from 'react';
 import axios from 'axios';
 
-const WheatherContext = createContext();
+const WeatherContext = createContext();
 
-const WheatherProvider = ({ children }) => {
+const WeatherProvider = ({ children }) => {
   const [search, setSearch] = useState({
     city: '',
     country: '',
@@ -40,14 +40,14 @@ const WheatherProvider = ({ children }) => {
   };
 
   return (
-    <WheatherContext.Provider
+    <WeatherContext.Provider
       value={{ search, searchData, searchWeather, result, loading, noResult }}
     >
       {children}
-    </WheatherContext.Provider>
+    </WeatherContext.Provider>
   );
 };
 
-export { WheatherProvider };
+export { WeatherProvider };
 
-export default WheatherContext;
+export default WeatherContext;

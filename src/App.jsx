@@ -1,16 +1,16 @@
 import './App.css';
-import WheatherApp from './components/WheatherApp';
+import WeatherApp from './components/WeatherApp';
 
-import { WheatherProvider } from './context/WheatherProvider';
+import { WeatherProvider } from './context/WeatherProvider';
 
 function App() {
   return (
-    <WheatherProvider>
+    <WeatherProvider>
       <header>
         <h1>Buscador de Clima</h1>
       </header>
-      <WheatherApp />
-    </WheatherProvider>
+      <WeatherApp />
+    </WeatherProvider>
   );
 }
 

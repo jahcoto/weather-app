@@ -2,10 +2,10 @@ import Form from './Form';
 import Result from './Result';
 import Loading from './Loading';
 
-import useWheather from '../hooks/useWheather';
+import useWeather from '../hooks/useWeather';
 
-const WheatherApp = () => {
-  const { result, loading, noResult } = useWheather();
+const WeatherApp = () => {
+  const { result, loading, noResult } = useWeather();
 
   return (
     <>
@@ -26,4 +26,4 @@ const WheatherApp = () => {
   );
 };
 
-export default WheatherApp;
+export default WeatherApp;
